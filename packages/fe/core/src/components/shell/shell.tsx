@@ -97,7 +97,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               />
 
               <Title c="primary" fz={16}>
-                {"Admin"}
+                {"Ministry of Tourism"}
               </Title>
             </Group>
             <Flex gap={4}>
