@@ -1,10 +1,14 @@
 import type { Icon as TablerIcon, IconProps } from '@tabler/icons-react';
 import {
+  IconAdjustments,
   IconAdjustmentsCog,
   IconBasketCog,
+  IconBook,
   IconBuildingBank,
   IconBuildingStore,
+  IconCalendar,
   IconCalendarEvent,
+  IconUsers,
   IconUsersGroup,
 } from '@tabler/icons-react';
 import { JSX, ForwardRefExoticComponent, RefAttributes } from 'react';
@@ -16,14 +20,12 @@ interface ApplicationType {
 }
 
 export const Applications = [
-  { key: 'administration', name: 'Administration', icon: IconAdjustmentsCog },
-  { key: 'guarantee', name: 'Guarantee', icon: IconBuildingBank },
-  { key: 'iam', name: 'Identity & Access', icon: IconUsersGroup },
-  { key: 'marketplace', name: 'Marketplace', icon: IconBuildingStore },
-  { key: 'planning', name: 'Planning', icon: IconCalendarEvent },
-  { key: 'tendering', name: 'Tendering', icon: IconBasketCog },
-  { key: 'vendors', name: 'Vendor Management', icon: IconBuildingStore },
-  // { key: 'contract', name: 'Contract', icon: IconFileSpreadsheet },
+    { key: 'registration', name: 'Registration', icon: IconAdjustments },
+    { key: 'bsc', name: 'BSC', icon: IconBuildingBank },
+    { key: 'pms', name: 'PMS', icon: IconUsers },
+    { key: 'researchPublication', name: 'Research Publication', icon: IconBook },
+    { key: 'communityService', name: 'Community Service', icon: IconCalendar },
+    { key: 'hr', name: 'Human Resource', icon: IconUsersGroup },
 ];
 
 export const CurrentApplication = (key = 'iam'): ApplicationType => {

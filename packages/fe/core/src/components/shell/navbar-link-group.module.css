@@ -5,7 +5,7 @@
   padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
 
   font-size: var(--mantine-font-size-sm);
-  @apply text-black;
+  /* @apply text-black; */
 }
 
 .link {
@@ -18,11 +18,11 @@
   font-size: var(--mantine-font-size-sm);
 
   border-left: 1px solid var(--mantine-color-gray-3);
-  @apply text-gray-600;
+  /* @apply text-gray-600; */
 }
 .control:hover,
 .link:hover {
-  @apply text-black bg-primary-100;
+  /* @apply text-black bg-primary-100; */
 }
 .chevron {
   transition: transform 200ms ease;
@@ -30,5 +30,5 @@
 
 .active {
   border-right: 2px solid var(--mantine-color-primary-4);
-  @apply text-black bg-primary-100;
+  /* @apply text-black bg-primary-100; */
 }

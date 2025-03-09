@@ -5,24 +5,23 @@
     "dev:back-office-registration": "turbo run dev --filter=registration",
     "build:back-office-registration": "turbo run build --filter=registration",
     "lint:back-office-registration": "turbo run lint --filter=registration",
-
     "dev:back-office-bsc": "turbo run dev --filter=bsc",
     "build:back-office-bsc": "turbo run build --filter=bsc",
     "lint:back-office-bsc": "turbo run lint --filter=bsc",
-
     "build:core": "turbo run build --filter=@lal-erp/core",
-
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@lal-erp/tsconfig": "workspace:*",
+    "@tailwindcss/postcss": "4.0.12",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
-    "prettier": "^3.4.2",
-    "turbo": "^2.4.0",
+    "prettier": "^3.5.3",
+    "tailwindcss": "4.0.12",
+    "turbo": "^2.4.4",
     "typescript": "5.8.2"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.6.1",
   "engines": {
     "node": ">=18"
   },

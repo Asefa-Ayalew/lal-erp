@@ -1,14 +1,39 @@
-"use client"
-import { AppShell, Avatar, Box, Burger, Button, Flex, Group, Menu, ScrollArea, Text, Title } from '@mantine/core';
-import { ModalsProvider } from '@mantine/modals';
-import { Notifications } from '@mantine/notifications';
-import { IconHelpCircle, IconLogout, IconMenu2, IconMessages, IconPasswordUser, IconSettings, IconUserCircle } from '@tabler/icons-react';
-import React, { useState } from 'react'
-import { LinksGroup } from './navbar-link-group';
-import { useDisclosure, useNetwork } from '@mantine/hooks';
-import styles from './shell.module.css';
-import { appConfig } from 'src/config/menu';
-import { Applications } from 'src/config/application';
+"use client";
+import {
+  AppShell,
+  Avatar,
+  Box,
+  Burger,
+  Button,
+  Divider,
+  Flex,
+  Group,
+  Menu,
+  ScrollArea,
+  Select,
+  Text,
+  Title,
+} from "@mantine/core";
+import { ModalsProvider } from "@mantine/modals";
+import { Notifications } from "@mantine/notifications";
+import {
+  IconGridDots,
+  IconHelpCircle,
+  IconLogout,
+  IconMenu2,
+  IconMessages,
+  IconPasswordUser,
+  IconSettings,
+  IconUserCircle,
+} from "@tabler/icons-react";
+import React, { useState } from "react";
+import { LinksGroup } from "./navbar-link-group";
+import { useDisclosure, useNetwork } from "@mantine/hooks";
+import styles from "./shell.module.css";
+import { appConfig } from "src/config/menu";
+import { Applications } from "src/config/application";
+import { useLocale } from "../../../../../../apps/back-office/bsc/src/app/locale-provider";
+import DarkModeToggle from "../dark-mode-toggle";
 
 interface ShellProps {
   children: React.ReactNode;
@@ -20,9 +45,9 @@ export function Shell({ children }: ShellProps): React.ReactNode {
   ));
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
-  const [currentApplication, setCurrentApplication] = useState('BSC')
+  const [currentApplication, setCurrentApplication] = useState("BSC");
   const applications = Applications.filter(
-    ({ name }) => name !== currentApplication,
+    ({ name }) => name !== currentApplication
   ).map((item) => (
     <Menu.Item
       component="a"
@@ -35,55 +60,90 @@ export function Shell({ children }: ShellProps): React.ReactNode {
   ));
   const networkStatus = useNetwork();
 
+  const { t } = useLocale();
+  const { locale, setLocale } = useLocale(); // Use locale context
+
   return (
     <ModalsProvider>
       <Notifications />
-        <AppShell
-          header={{ height: '40px' }}
-          layout="alt"
-          navbar={{
-            width: 250,
-            breakpoint: 'sm',
-            collapsed: {
-              mobile: !mobileOpened,
-              desktop: !desktopOpened,
-            },
-          }}
-          padding="md"
-        >
-          <AppShell.Header>
-            <Group align="center" h="100%" justify="space-between" px="sm">
-              <Group align="center" gap={12} h="100%">
-                <Burger
-                  hiddenFrom="sm"
-                  onClick={toggleMobile}
-                  opened={mobileOpened}
-                  size="sm"
-                />
-                <Button
-                  leftSection={<IconMenu2 size={16} />}
-                  onClick={toggleDesktop}
-                  pr={0}
-                  variant="white"
-                  visibleFrom="sm"
-                />
+      <AppShell
+        header={{ height: "48px" }}
+        layout="alt"
+        navbar={{
+          width: 250,
+          breakpoint: "sm",
+          collapsed: {
+            mobile: !mobileOpened,
+            desktop: !desktopOpened,
+          },
+        }}
+        padding="md"
+      >
+        <AppShell.Header>
+          <Group align="center" h="100%" justify="space-between" px="sm">
+            <Group align="center" gap={12} h="100%">
+              <Burger
+                hiddenFrom="sm"
+                onClick={toggleMobile}
+                opened={mobileOpened}
+                size="sm"
+              />
+              <Button
+                leftSection={<IconMenu2 size={16} />}
+                onClick={toggleDesktop}
+                pr={0}
+                variant="white"
+                visibleFrom="sm"
+              />
 
-                <Title c="primary" fz={16}>
-                  {'Admin'}
-                </Title>
-              </Group>
-
+              <Title c="primary" fz={16}>
+                {"Admin"}
+              </Title>
+            </Group>
+            <Flex gap={4}>
+              <Group className="hidden md:flex">
+                <Select
+                  data={[
+                    { value: "en", label: "English" },
+                    { value: "am", label: "አማርኛ" },
+                  ]}
+                  value={locale} // Bind to context locale
+                  onChange={(val) => setLocale(val as "en" | "am")}
+                  classNames={{
+                    input: "w-28 bg-white dark:bg-gray-900 dark:text-white",
+                    dropdown: "dark:bg-gray-800 dark:text-white",
+                    option: "dark:hover:bg-gray-700 dark:hover:text-white",
+                  }}
+                  style={{
+                    width: "7px",
+                    marginTop: "2px",
+                    paddingBottom: "2px",
+                    cursor: "pointer",
+                  }}
+                />
+                <Box style={{ marginRight: "8px" }}>
+                  <DarkModeToggle />
+                </Box>
+              </Group>{" "}
+              <Menu shadow="md" width={250}>
+                <Menu.Target>
+                  <div style={{ paddingTop: "6px" }}>
+                    <IconGridDots size={16} />
+                    <Divider className="mb-10" />
+                  </div>
+                </Menu.Target>
+                <Menu.Dropdown>
+                  <Menu.Label>Applications</Menu.Label>
+                  {applications}
+                </Menu.Dropdown>
+              </Menu>
               <Menu arrowPosition="center" shadow="md" width={200} withArrow>
                 <Menu.Target>
                   <Button variant="subtle">
-                    <Box className="flex gap-2 items-center">
+                    <Flex gap={4}>
                       <Avatar color="primary" radius="xl" size="sm" />
-
-                        <Flex className="flex-col justify-start text-left">
-                          <Text
-                          >{'Nolawi Mekuriaw'}</Text>
-                        </Flex>
-                    </Box>
+                      <Text>{"Nolawi Mekuriaw"}</Text>
+                    </Flex>
                   </Button>
                 </Menu.Target>
 
@@ -116,103 +176,72 @@ export function Shell({ children }: ShellProps): React.ReactNode {
 
                   <Menu.Divider />
 
-                  <Menu.Item
-                    leftSection={<IconLogout size={14} />}
-                  >
+                  <Menu.Item leftSection={<IconLogout size={14} />}>
                     Logout
                   </Menu.Item>
                 </Menu.Dropdown>
               </Menu>
-            </Group>
-          </AppShell.Header>
-          <AppShell.Navbar className={styles.side}>
-            <AppShell.Section>
-              <Box className={styles.header}>
-                <Box className="flex-grow">
-                  <Menu shadow="md" width={250}>
-                    <Menu.Target>
-                      <div className="flex items-center gap-1 cursor-pointer">
-                        <svg
-                          height="18"
-                          version="1.1"
-                          viewBox="0 0 32 32"
-                          width="18"
-                          xmlSpace="preserve"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
-                        >
-                          <g>
-                            <path
-                              d="M14,3H4C3.4,3,3,3.4,3,4v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V4C15,3.4,14.6,3,14,3z"
-                              fill="#f1f1ff"
-                            />
-                            <path
-                              d="M14,17H4c-0.6,0-1,0.4-1,1v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V18C15,17.4,14.6,17,14,17z"
-                              fill="#f1f1ff"
-                            />
-                            <path
-                              d="M28,3H18c-0.6,0-1,0.4-1,1v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V4C29,3.4,28.6,3,28,3z"
-                              fill="#f1f1ff"
-                            />
-                            <path
-                              d="M28,17H18c-0.6,0-1,0.4-1,1v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V18C29,17.4,28.6,17,28,17z"
-                              fill="#f1f1ff"
-                            />
-                          </g>
-                        </svg>
-                        {/* <Logo style={{ width: '30px' }} /> */}
-                        <Text fw={500} fz="md">
-                          | {currentApplication}
-                        </Text>
-                      </div>
-                    </Menu.Target>
-                    <Menu.Dropdown>
-                      <Menu.Label>Applications</Menu.Label>
-                      {applications}
-                    </Menu.Dropdown>
-                  </Menu>
-                  <Burger
-                    color="white"
-                    hiddenFrom="sm"
-                    onClick={toggleMobile}
-                    opened={mobileOpened}
-                    size="sm"
-                  />
+            </Flex>
+          </Group>
+        </AppShell.Header>
+        <AppShell.Navbar className={styles.side}>
+          <AppShell.Section>
+            <Box className={styles.header}>
+              <Box className="flex-grow">
+                <Box
+                  style={{
+                    height: "42px",
+                    backgroundColor: "#f1f1ff",
+                    alignItems: "center",
+                  }}
+                >
+                  <h2
+                    style={{
+                      paddingLeft: "20px",
+                      paddingTop: "10px",
+                      fontFamily: "sans-serif",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {currentApplication}
+                  </h2>
                 </Box>
+                <Burger
+                  color="white"
+                  hiddenFrom="sm"
+                  onClick={toggleMobile}
+                  opened={mobileOpened}
+                  size="sm"
+                />
               </Box>
-            </AppShell.Section>
-            <AppShell.Section component={ScrollArea} grow>
-              {links}
-            </AppShell.Section>
-            <AppShell.Section>
-              <div className=" text-xs  border-t p-2">
-                <div className="flex justify-between items-center">
-                  <Text color={networkStatus.online ? 'teal' : 'red'} size="sm">
-                    {networkStatus.online ? 'Online' : 'Offline'}
-                  </Text>
-                  <div className="text-center">
-                    {process.env.NEXT_PUBLIC_VERSION}
-                  </div>{' '}
-                </div>
-                <div className="flex gap-2 justify-between items-center">
-                  <div> &copy; 2025 WDU </div>
-                  <div className="flex gap-2 justify-between items-center">
-                    <span>Powered by</span>
-                    {/* <Image
-                      alt="wdu"
-                      height={40}
-                      src={}
-                      width={60}
-                    />{' '} */}
-                  </div>
-                </div>
+            </Box>
+          </AppShell.Section>
+          <AppShell.Section component={ScrollArea} grow>
+            {links}
+          </AppShell.Section>
+          <AppShell.Section>
+            <div className=" text-xs  border-t p-2">
+              <div className="flex justify-between items-center">
+                <Text color={networkStatus.online ? "teal" : "red"} size="sm">
+                  {networkStatus.online ? "Online" : "Offline"}
+                </Text>
+                <div className="text-center">
+                  {process.env.NEXT_PUBLIC_VERSION}
+                </div>{" "}
               </div>
-            </AppShell.Section>
-          </AppShell.Navbar>
-          <AppShell.Main>{children}</AppShell.Main>
-        </AppShell>
+              <div className="flex gap-2 justify-between items-center">
+                <Flex gap={"xl"}>
+                  <Box>WDU</Box>
+                  <Box> &copy; 2025 </Box>
+                </Flex>
+              </div>
+            </div>
+          </AppShell.Section>
+        </AppShell.Navbar>
+        <AppShell.Main>{children}</AppShell.Main>
+      </AppShell>
     </ModalsProvider>
   );
 }
 
-export default Shell
+export default Shell;

@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next-intl": "^3.26.3",
+    "next-intl": "^3.26.5",
     "react": "^19.0.0"
   }
 }

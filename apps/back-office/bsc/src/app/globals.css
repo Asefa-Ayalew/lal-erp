@@ -1,18 +1,15 @@
+@layer theme, base, mantine, components, utilities;
+@Import "tailwindcss";
 
 @import '@mantine/notifications/styles.css';
 @import '@mantine/core/styles.css';
 @import '@lal-erp/theme/theme.css';
 @import '@lal-erp/theme/preflight.css';
-@Import "tailwindcss";
 
-@tailwind utilities;
-@tailwind components;
-@tailwind base;
-
-html,
+/* html,
 body {
   @apply bg-gray-100;
 }
 body {
   font-size: 14px;
-}
+} */

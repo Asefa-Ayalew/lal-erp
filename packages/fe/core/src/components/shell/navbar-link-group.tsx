@@ -11,7 +11,7 @@ import { IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import styles from './navbar-link-group.module.scss';
+import styles from './navbar-link-group.module.css';
 
 interface LinksGroupProps {
   icon: React.FC<any>;
