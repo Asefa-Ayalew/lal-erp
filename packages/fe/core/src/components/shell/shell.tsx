@@ -127,7 +127,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               </Group>{" "}
               <Menu shadow="md" width={250}>
                 <Menu.Target>
-                  <div style={{ paddingTop: "6px" }}>
+                  <div style={{ paddingTop: "6px", cursor: "pointer"}}>
                     <IconGridDots size={16} />
                     <Divider className="mb-10" />
                   </div>
