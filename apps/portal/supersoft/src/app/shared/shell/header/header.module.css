@@ -1,0 +1,61 @@
+/* Header Styles */
+.header {
+    height: 60px;
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+    border-bottom: 1px solid var(--mantine-color-gray-3);
+    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6)); /* Ensure the background color is set based on light/dark mode */
+  }
+  
+  /* Link Styles */
+  .link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+    text-decoration: none;
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    font-weight: 500;
+    font-size: var(--mantine-font-size-md);
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .link:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6)); /* Make hover color consistent with light/dark mode */
+  }
+  .link.active {
+    color: var(--mantine-color-blue-6); /* Make it blue */
+    text-decoration: underline; /* Add an underline */
+    text-underline-offset: 4px; /* Adjust spacing */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: var(--mantine-breakpoint-sm)) {
+    .link {
+      height: 42px;
+      width: 100%;
+    }
+  }
+  
+  /* Sub Link Styles */
+  .subLink {
+    width: 100%;
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+    border-radius: var(--mantine-radius-md);
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .subLink:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7)); /* Hover effect on sublinks */
+  }
+  
+  /* Dropdown Footer Styles */
+  .dropdownFooter {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
+    margin-top: var(--mantine-spacing-sm);
+    padding: var(--mantine-spacing-md) calc(var(--mantine-spacing-md) * 2);
+    padding-bottom: var(--mantine-spacing-xl);
+    border-top: 1px solid var(--mantine-color-gray-1);
+  }
+  

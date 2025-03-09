@@ -1,0 +1,16 @@
+{
+  "name": "@lal-erp/locale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next-intl": "^3.26.3",
+    "react": "^19.0.0"
+  }
+}

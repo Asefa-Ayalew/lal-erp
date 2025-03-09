@@ -1,3 +1,5 @@
 packages:
-  - "apps/*"
-  - "packages/*"
+  - 'apps/back-office/*'
+  - 'apps/portal/*'
+  - 'packages/config/*'
+  - 'packages/fe/*'

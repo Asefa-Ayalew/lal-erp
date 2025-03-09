@@ -1,0 +1,26 @@
+{
+  "name": "@lal-erp/theme",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.16.2",
+    "@mantine/dates": "^7.16.2",
+    "@mantine/form": "^7.16.2",
+    "@mantine/hooks": "^7.16.2",
+    "@mantine/modals": "^7.16.2",
+    "@mantine/notifications": "^7.16.2",
+    "dayjs": "^1.11.13",
+    "next-intl": "^3.26.3"
+  },
+  "devDependencies": {
+    "@lal-erp/eslint-config": "workspace:*",
+    "@lal-erp/tsconfig": "workspace:*",
+    "@types/node": "^20",
+    "sass": "^1.69.4"
+  }
+}

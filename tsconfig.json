@@ -1,0 +1,6 @@
+{
+  "extends": "@lal-erp/tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  }
+}
