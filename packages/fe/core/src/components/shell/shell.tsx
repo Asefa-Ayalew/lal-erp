@@ -45,7 +45,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
   ));
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
-  const [currentApplication, setCurrentApplication] = useState("BSC");
+  const [currentApplication, setCurrentApplication] = useState("Balanced Score Card");
   const applications = Applications.filter(
     ({ name }) => name !== currentApplication
   ).map((item) => (
@@ -97,7 +97,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               />
 
               <Title c="primary" fz={16}>
-                {"Ministry of Tourism"}
+                {"LAL-ERP"}
               </Title>
             </Group>
             <Flex gap={4}>
@@ -128,7 +128,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               <Menu shadow="md" width={250}>
                 <Menu.Target>
                   <div style={{ paddingTop: "8px", cursor: "pointer"}}>
-                    <IconGridDots size={16} />
+                    <IconGridDots size={16} className="color-black" />
                     <Divider className="mb-10" />
                   </div>
                 </Menu.Target>
@@ -157,7 +157,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                   </Menu.Item>
                   <Menu.Item
                     component="a"
-                    href="/iam/change-password"
+                    href="/auth/change-password"
                     leftSection={<IconPasswordUser size={14} />}
                   >
                     Change Password
@@ -203,7 +203,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                       fontWeight: "bold",
                     }}
                   >
-                    {currentApplication}
+                    {currentApplication }
                   </h2>
                 </Box>
                 <Burger
