@@ -9,6 +9,7 @@
     "build:back-office-bsc": "turbo run build --filter=bsc",
     "lint:back-office-bsc": "turbo run lint --filter=bsc",
     "build:core": "turbo run build --filter=@lal-erp/core",
+    "build:ui": "turbo run build --filter=@lal-erp/ui",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

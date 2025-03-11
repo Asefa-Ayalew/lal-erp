@@ -45,7 +45,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
   ));
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
-  const [currentApplication, setCurrentApplication] = useState("BSC");
+  const [currentApplication, setCurrentApplication] = useState("Balanced Score Card");
   const applications = Applications.filter(
     ({ name }) => name !== currentApplication
   ).map((item) => (
@@ -97,7 +97,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               />
 
               <Title c="primary" fz={16}>
-                {"Ministry of Tourism"}
+                {"LAL-ERP"}
               </Title>
             </Group>
             <Flex gap={4}>
@@ -157,7 +157,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                   </Menu.Item>
                   <Menu.Item
                     component="a"
-                    href="/iam/change-password"
+                    href="/auth/change-password"
                     leftSection={<IconPasswordUser size={14} />}
                   >
                     Change Password

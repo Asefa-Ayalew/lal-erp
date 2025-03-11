@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lal-erp/ui": "workspace:*",
     "@lal-erp/core": "workspace:*",
     "@lal-erp/theme": "workspace:*",
     "@mantine/carousel": "^7.17.1",

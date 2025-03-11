@@ -21,14 +21,14 @@ interface ApplicationType {
 
 export const Applications = [
     { key: 'registration', name: 'Registration', icon: IconAdjustments },
-    { key: 'bsc', name: 'BSC', icon: IconBuildingBank },
-    { key: 'pms', name: 'PMS', icon: IconUsers },
+    { key: 'balanceScorecard ', name: 'Balance Scorecard ', icon: IconBuildingBank },
+    { key: 'propertyManagement', name: 'Property Management', icon: IconUsers },
     { key: 'researchPublication', name: 'Research Publication', icon: IconBook },
     { key: 'communityService', name: 'Community Service', icon: IconCalendar },
-    { key: 'hr', name: 'Human Resource', icon: IconUsersGroup },
+    { key: 'humanResource', name: 'Human Resource', icon: IconUsersGroup },
 ];
 
-export const CurrentApplication = (key = 'iam'): ApplicationType => {
+export const CurrentApplication = (key = 'registration'): ApplicationType => {
   const application =
     Applications.find((app) => app.key === key) ?? Applications[0];
   return application;
