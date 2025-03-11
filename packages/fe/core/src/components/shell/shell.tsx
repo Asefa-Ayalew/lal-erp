@@ -127,7 +127,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               </Group>{" "}
               <Menu shadow="md" width={250}>
                 <Menu.Target>
-                  <div style={{ paddingTop: "6px", cursor: "pointer"}}>
+                  <div style={{ paddingTop: "8px", cursor: "pointer"}}>
                     <IconGridDots size={16} />
                     <Divider className="mb-10" />
                   </div>
@@ -140,7 +140,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               <Menu arrowPosition="center" shadow="md" width={200} withArrow>
                 <Menu.Target>
                   <Button variant="subtle">
-                    <Flex gap={4}>
+                    <Flex gap={4} >
                       <Avatar color="primary" radius="xl" size="sm" />
                       <Text>{"Nolawi Mekuriaw"}</Text>
                     </Flex>
