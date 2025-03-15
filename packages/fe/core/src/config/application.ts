@@ -21,7 +21,7 @@ interface ApplicationType {
 
 export const Applications = [
     { key: 'registration', name: 'Registration', icon: IconAdjustments },
-    { key: 'balanceScorecard ', name: 'Balance Scorecard ', icon: IconBuildingBank },
+    { key: 'balancedScoreCard ', name: 'Balanced Score Card ', icon: IconBuildingBank },
     { key: 'propertyManagement', name: 'Property Management', icon: IconUsers },
     { key: 'researchPublication', name: 'Research Publication', icon: IconBook },
     { key: 'communityService', name: 'Community Service', icon: IconCalendar },
