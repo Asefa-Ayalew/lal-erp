@@ -387,6 +387,9 @@ importers:
 
   packages/fe/ui:
     dependencies:
+      '@lal-erp/theme':
+        specifier: workspace:*
+        version: link:../../config/theme
       '@mantine/core':
         specifier: ^7.17.1
         version: 7.17.1(@mantine/hooks@7.17.1(react@19.0.0))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)

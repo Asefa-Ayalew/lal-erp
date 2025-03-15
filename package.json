@@ -2,12 +2,12 @@
   "name": "lal-erp",
   "private": true,
   "scripts": {
-    "dev:back-office-registration": "turbo run dev --filter=registration",
-    "build:back-office-registration": "turbo run build --filter=registration",
-    "lint:back-office-registration": "turbo run lint --filter=registration",
-    "dev:back-office-bsc": "turbo run dev --filter=bsc",
-    "build:back-office-bsc": "turbo run build --filter=bsc",
-    "lint:back-office-bsc": "turbo run lint --filter=bsc",
+    "dev:bo-registration": "turbo run dev --filter=registration",
+    "build:bo-registration": "turbo run build --filter=registration",
+    "lint:bo-registration": "turbo run lint --filter=registration",
+    "dev:bo-bsc": "turbo run dev --filter=bsc",
+    "build:bo-bsc": "turbo run build --filter=bsc",
+    "lint:bo-bsc": "turbo run lint --filter=bsc",
     "build:core": "turbo run build --filter=@lal-erp/core",
     "build:ui": "turbo run build --filter=@lal-erp/ui",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
