@@ -128,7 +128,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               <Menu shadow="md" width={250}>
                 <Menu.Target>
                   <div style={{ paddingTop: "8px", cursor: "pointer"}}>
-                    <IconGridDots size={16} />
+                    <IconGridDots size={16} className="color-black" />
                     <Divider className="mb-10" />
                   </div>
                 </Menu.Target>
@@ -203,7 +203,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                       fontWeight: "bold",
                     }}
                   >
-                    {currentApplication}
+                    {currentApplication }
                   </h2>
                 </Box>
                 <Burger
