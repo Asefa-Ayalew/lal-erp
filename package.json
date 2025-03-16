@@ -2,24 +2,22 @@
   "name": "lal-erp",
   "private": true,
   "scripts": {
-    "dev:back-office-registration": "turbo run dev --filter=registration",
-    "build:back-office-registration": "turbo run build --filter=registration",
-    "lint:back-office-registration": "turbo run lint --filter=registration",
     "dev:back-office-bsc": "turbo run dev --filter=bsc",
     "build:back-office-bsc": "turbo run build --filter=bsc",
     "lint:back-office-bsc": "turbo run lint --filter=bsc",
     "build:core": "turbo run build --filter=@lal-erp/core",
+    "build:ui": "turbo run build --filter=@lal-erp/ui",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@lal-erp/tsconfig": "workspace:*",
-    "@tailwindcss/postcss": "4.0.12",
+    "@lal-erp/tsconfig": "0.0.0",
+    "@tailwindcss/postcss": "^4.0.13",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "prettier": "^3.5.3",
-    "tailwindcss": "4.0.12",
+    "tailwindcss": "^4.0.13",
     "turbo": "^2.4.4",
-    "typescript": "5.8.2"
+    "typescript": "^5.8.2"
   },
   "packageManager": "pnpm@10.6.1",
   "engines": {
