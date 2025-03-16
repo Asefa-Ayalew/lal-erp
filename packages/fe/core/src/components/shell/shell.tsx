@@ -1,4 +1,6 @@
 "use client";
+import '../../styles.css'
+
 import {
   AppShell,
   Avatar,
@@ -34,6 +36,7 @@ import { appConfig } from "src/config/menu";
 import { Applications } from "src/config/application";
 import { useLocale } from "../../../../../../apps/back-office/bsc/src/app/locale-provider";
 import DarkModeToggle from "../dark-mode-toggle";
+import { UserInfo } from './user-info';
 
 interface ShellProps {
   children: React.ReactNode;
@@ -70,7 +73,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
         header={{ height: "48px" }}
         layout="alt"
         navbar={{
-          width: 250,
+          width:300,
           breakpoint: "sm",
           collapsed: {
             mobile: !mobileOpened,
@@ -129,7 +132,6 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 <Menu.Target>
                   <div style={{ paddingTop: "8px", cursor: "pointer"}}>
                     <IconGridDots size={16} />
-                    <Divider className="mb-10" />
                   </div>
                 </Menu.Target>
                 <Menu.Dropdown>
@@ -141,7 +143,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 <Menu.Target>
                   <Button variant="subtle">
                     <Flex gap={4} >
-                      <Avatar color="primary" radius="xl" size="sm" />
+                      <Avatar  radius="xl" size="sm"  className='text-blue-800'/>
                       <Text>{"Nolawi Mekuriaw"}</Text>
                     </Flex>
                   </Button>
@@ -215,6 +217,8 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 />
               </Box>
             </Box>
+            <UserInfo />
+            <Divider />
           </AppShell.Section>
           <AppShell.Section component={ScrollArea} grow>
             {links}
