@@ -4,7 +4,7 @@ import '../../styles.css'
 
 export function UserInfo() {
   return (
-    <div className='m-3'>
+    <div className='mx-3 my-8'>
       <Group wrap="nowrap">
         <Avatar
           src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png"

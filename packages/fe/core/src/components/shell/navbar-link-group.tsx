@@ -57,7 +57,7 @@ export function LinksGroup({
         >
           <Group gap={0} justify="space-between">
             <Box style={{ display: 'flex', alignItems: 'center' }}>
-              <ThemeIcon size={30} variant="light">
+              <ThemeIcon size={30} variant="light"  c="white">
                 <Icon style={{ width: rem(18), height: rem(18) }} />
               </ThemeIcon>
               <Box ml="md">{label}</Box>
@@ -86,7 +86,7 @@ export function LinksGroup({
         >
           <Group gap={0} justify="space-between">
             <Box style={{ display: 'flex', alignItems: 'center' }}>
-              <ThemeIcon size={30} variant="light">
+              <ThemeIcon size={30} variant="light" c="white">
                 <Icon style={{ width: rem(18), height: rem(18) }} />
               </ThemeIcon>
               <Box ml="md">{label}</Box>

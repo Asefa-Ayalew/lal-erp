@@ -193,13 +193,15 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 <Box
                   style={{
                     height: "42px",
-                    backgroundColor: "#f1f1ff",
+                    backgroundColor: "#1A2940",
                     alignItems: "center",
+                    color: "white"
                   }}
                 >
                   <h2
                     style={{
                       paddingLeft: "20px",
+                      paddingBottom: "10px",
                       paddingTop: "10px",
                       fontFamily: "sans-serif",
                       fontWeight: "bold",
@@ -207,6 +209,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                   >
                     {currentApplication}
                   </h2>
+                  <Divider c="blue" />
                 </Box>
                 <Burger
                   color="white"
@@ -218,7 +221,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               </Box>
             </Box>
             <UserInfo />
-            <Divider />
+            <Divider c="blue" />
           </AppShell.Section>
           <AppShell.Section component={ScrollArea} grow>
             {links}
