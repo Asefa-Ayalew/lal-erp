@@ -3,8 +3,6 @@ import "./globals.css";
 import MantineProviderRegistry from "./mantine";
 import { Shell } from "@lal-erp/core";
 import { LocaleProvider } from "./locale-provider";
-import { theme } from "@lal-erp/theme/mantine";
-import { MantineProvider } from "@mantine/core";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,12 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <LocaleProvider>
-          {/* <MantineProviderRegistry>
+          <MantineProviderRegistry>
             <Shell>{children}</Shell>
-          </MantineProviderRegistry>{" "} */}
-          <MantineProvider>
-            <Shell>{children}</Shell>
-          </MantineProvider>
+          </MantineProviderRegistry>{" "}
         </LocaleProvider>
       </body>
     </html>
