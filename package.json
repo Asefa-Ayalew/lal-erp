@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@lal-erp/eslint-config": "workspace:*",
     "@lal-erp/tsconfig": "workspace:*",
     "@tailwindcss/postcss": "4.0.12",
     "@types/node": "^22.13.10",
@@ -27,6 +28,9 @@
     "node": ">=18"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@mantine/core": "^7.17.1",
+    "@mantine/hooks": "^7.17.1",
     "bsc": "^2.0.0",
     "registration": "^2.0.0"
   }

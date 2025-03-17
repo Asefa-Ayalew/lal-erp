@@ -1,20 +1,32 @@
-import { Button, Card } from '@lal-erp/ui'
+"use client";
+import { LalErpApproveRejectButtons, LalErpCancelResetButtons, LalErpEditDeleteButtons, LalErpSaveButton } from '@lal-erp/ui'
 import React from 'react'
 
+import { LalErpCard } from '@lal-erp/ui'
+import { Button, Card } from '@mantine/core';
+import OurCard from '@/app/components/OurCard';
+import ApprovalWorkFlow from '@/app/components/ApprovalWorkFlow';
+import { Workflows } from './types';
+
 const ProfilePage = () => {
+  console.log("Workflows: ", Workflows)
+  const handleClick = (action: string) => {
+    alert(`Button clicked: ${action}`);
+  };
+
   return (
     <div>
-      <Button variant="primary">Save</Button>
-      <Button variant="outline">Cancel</Button>
-      <Button variant="danger">Delete</Button>
-      <Button variant="loading" disabled>Processing...</Button>
+      <h1 className="text-2xl font-bold">Workflow</h1>
+      <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+              {
+                Workflows.map((item)=>(
+                  <div className='' key={item.id}>
+                    <ApprovalWorkFlow id={item.id} name={item.name} />
+                  </div>
+                ))
+              }
 
-      <hr />
-      <Card title="Project Status">
-        <p>ERP System is 80% complete.</p>
-      </Card>
-
-
+      </div>
     </div>
   )
 }
