@@ -1,4 +1,6 @@
 "use client";
+import '../../styles.css'
+
 import {
   AppShell,
   Avatar,
@@ -34,6 +36,7 @@ import { appConfig } from "src/config/menu";
 import { Applications } from "src/config/application";
 import { useLocale } from "../../../../../../apps/back-office/bsc/src/app/locale-provider";
 import DarkModeToggle from "../dark-mode-toggle";
+import { UserInfo } from './user-info';
 
 interface ShellProps {
   children: React.ReactNode;
@@ -45,7 +48,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
   ));
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
-  const [currentApplication, setCurrentApplication] = useState("Balanced Score Card");
+  const [currentApplication, setCurrentApplication] = useState("BSC");
   const applications = Applications.filter(
     ({ name }) => name !== currentApplication
   ).map((item) => (
@@ -70,7 +73,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
         header={{ height: "48px" }}
         layout="alt"
         navbar={{
-          width: 250,
+          width:300,
           breakpoint: "sm",
           collapsed: {
             mobile: !mobileOpened,
@@ -97,7 +100,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               />
 
               <Title c="primary" fz={16}>
-                {"LAL-ERP"}
+                {"Ministry of Tourism"}
               </Title>
             </Group>
             <Flex gap={4}>
@@ -128,8 +131,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               <Menu shadow="md" width={250}>
                 <Menu.Target>
                   <div style={{ paddingTop: "8px", cursor: "pointer"}}>
-                    <IconGridDots size={16} className="color-black" />
-                    <Divider className="mb-10" />
+                    <IconGridDots size={16} />
                   </div>
                 </Menu.Target>
                 <Menu.Dropdown>
@@ -141,7 +143,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 <Menu.Target>
                   <Button variant="subtle">
                     <Flex gap={4} >
-                      <Avatar color="primary" radius="xl" size="sm" />
+                      <Avatar  radius="xl" size="sm"  className='text-blue-800'/>
                       <Text>{"Nolawi Mekuriaw"}</Text>
                     </Flex>
                   </Button>
@@ -157,7 +159,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                   </Menu.Item>
                   <Menu.Item
                     component="a"
-                    href="/auth/change-password"
+                    href="/iam/change-password"
                     leftSection={<IconPasswordUser size={14} />}
                   >
                     Change Password
@@ -191,13 +193,15 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 <Box
                   style={{
                     height: "42px",
-                    backgroundColor: "#f1f1ff",
+                    backgroundColor: "#1A2940",
                     alignItems: "center",
+                    color: "white"
                   }}
                 >
                   <h2
                     style={{
                       paddingLeft: "20px",
+                      paddingBottom: "10px",
                       paddingTop: "10px",
                       fontFamily: "sans-serif",
                       fontWeight: "bold",
@@ -205,6 +209,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                   >
                     {currentApplication }
                   </h2>
+                  <Divider c="blue" />
                 </Box>
                 <Burger
                   color="white"
@@ -215,6 +220,8 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 />
               </Box>
             </Box>
+            <UserInfo />
+            <Divider c="blue" />
           </AppShell.Section>
           <AppShell.Section component={ScrollArea} grow>
             {links}
