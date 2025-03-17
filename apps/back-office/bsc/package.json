@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@lal-erp/core": "workspace:*",
     "@lal-erp/theme": "workspace:*",
     "@lal-erp/ui": "workspace:*",
