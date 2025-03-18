@@ -48,7 +48,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
   ));
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
-  const [currentApplication, setCurrentApplication] = useState("BSC");
+  const [currentApplication, setCurrentApplication] = useState("Balanced Score Card");
   const applications = Applications.filter(
     ({ name }) => name !== currentApplication
   ).map((item) => (
@@ -100,7 +100,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               />
 
               <Title c="primary" fz={16}>
-                {"Ministry of Tourism"}
+                {"LAL-ERP"}
               </Title>
             </Group>
             <Flex gap={4}>
