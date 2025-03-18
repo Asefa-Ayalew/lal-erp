@@ -1,5 +1,6 @@
 .side {
-  background-color: #fff;
+  color: white;
+  background-color: #0b2752;
 }
 .header {
   /* @apply p-2 flex items-center justify-between; */

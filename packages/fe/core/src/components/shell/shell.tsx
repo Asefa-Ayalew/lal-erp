@@ -73,7 +73,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
         header={{ height: "48px" }}
         layout="alt"
         navbar={{
-          width:300,
+          width:250,
           breakpoint: "sm",
           collapsed: {
             mobile: !mobileOpened,
@@ -82,8 +82,14 @@ export function Shell({ children }: ShellProps): React.ReactNode {
         }}
         padding="md"
       >
-        <AppShell.Header>
-          <Group align="center" h="100%" justify="space-between" px="sm">
+        <AppShell.Header  style={{
+            height: "48px",
+            backgroundColor: "#1A2940",
+            alignItems: "center",
+            color: "white"
+          }}>
+          <Group align="center" h="100%" justify="space-between" px="sm"
+         >
             <Group align="center" gap={12} h="100%">
               <Burger
                 hiddenFrom="sm"

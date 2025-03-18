@@ -1,0 +1,26 @@
+.card {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  }
+  
+.title {
+    font-family:
+      Greycliff CF,
+      var(--mantine-font-family);
+    font-weight: 700;
+}
+
+.whiteBackground {
+    background-color: white !important;
+  }
+
+
+  /* Ensure the action icon is hidden initially */
+.action-icon {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Show the action icon when the row is hovered */
+.table-row:hover .action-icon {
+  opacity: 1;
+}

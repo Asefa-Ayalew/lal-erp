@@ -14,6 +14,7 @@ import {
     { label: "Profile", icon: IconUser, link: "/profile" },
     { label: "Education", icon: IconCup, link: "/education" },
     { label: "Projects", icon: IconBriefcase, link:"/projects"},
+    { label: "List With Detail", icon: IconTools, link: "/list-with-detail" },
     { label: "Entity List", icon: IconTools, link: "/entity-list" },
     {
       label: "Skills",
