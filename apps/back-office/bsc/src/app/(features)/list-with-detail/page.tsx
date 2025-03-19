@@ -12,7 +12,6 @@ const Example: React.FC = () => {
     alert(`Go to details for user ID: ${id}`);
   };
 
-  // Sample table data
   const data = [
     { id: 1, name: "Nolawi Mekuriaw", email: "derso.m@wldu.edu.et" },
     { id: 2, name: "Solomon ALebachew", email: "solomon.a@wldu.edu.et" },
