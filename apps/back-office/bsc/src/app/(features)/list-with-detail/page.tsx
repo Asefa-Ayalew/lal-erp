@@ -1,7 +1,6 @@
 "use client"; 
-
-import ReusableCard from "@/app/components/ListWithDetail/Card";
 import TableComponent from "@/app/components/ListWithDetail/Table";
+import { ReusableCard } from "@lal-erp/ui";
 import React from "react";
 
 const Example: React.FC = () => {
@@ -15,8 +14,8 @@ const Example: React.FC = () => {
 
   // Sample table data
   const data = [
-    { id: 1, name: "John Doe", email: "john@example.com" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com" },
+    { id: 1, name: "Nolawi Mekuriaw", email: "derso.m@wldu.edu.et" },
+    { id: 2, name: "Solomon ALebachew", email: "solomon.a@wldu.edu.et" },
   ];
 
   return (

@@ -1,16 +1,28 @@
-import { Card } from "@mantine/core";
+"use client";
 
+import React from "react";
+import { Card, Group, Text, Button, Divider } from "@mantine/core";
+import classes from "./Card.module.css";
 
-interface CardProps {
+interface ReusableCardProps {
   title: string;
-  children: React.ReactNode;
-  footer?: React.ReactNode;
+  onAddClick?: () => void;
+  children?: React.ReactNode;
 }
 
-export const LalErpCard: React.FC<CardProps> = ({ title, children, footer }) => {
+export const ReusableCard: React.FC<ReusableCardProps> = ({ title, onAddClick, children }) => {
   return (
-    <Card shadow="md" padding="lg" radius="md" className="border border-gray-200 rounded-lg">
-      {children}
+    <Card withBorder radius="md" className={`${classes.card} ${classes.whiteBackground}`}>
+      <Group justify="space-between">
+        <Text className={classes.title}>{title}</Text>
+        {onAddClick && (
+          <Button size="xs" variant="filled" color="blue" onClick={onAddClick}>
+            Add
+          </Button>
+        )}
+      </Group>
+      <Divider my="sm" />
+      {children} {/* Table or any other child component */}
     </Card>
   );
 };

@@ -82,7 +82,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
         }}
         padding="md"
       >
-        <AppShell.Header  style={{
+        <AppShell.Header style={{
             height: "48px",
             backgroundColor: "#1A2940",
             alignItems: "center",
@@ -97,15 +97,26 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 opened={mobileOpened}
                 size="sm"
               />
-              <Button
+              {/* <Button
                 leftSection={<IconMenu2 size={16} />}
                 onClick={toggleDesktop}
                 pr={0}
-                variant="white"
                 visibleFrom="sm"
-              />
+                style={{
+                  backgroundColor: "#0b2752",
+                  color: "white",
+                }}
+              /> */}
 
-              <Title c="primary" fz={16}>
+              <IconMenu2 size={16} 
+              onClick={toggleDesktop}
+              style={{
+                color: "white",
+                cursor: "pointer",
+                fontWeight: "bold",
+              }}/>
+
+              <Title fz={16}>
                 {"LAL-ERP"}
               </Title>
             </Group>
@@ -148,7 +159,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               <Menu arrowPosition="center" shadow="md" width={200} withArrow>
                 <Menu.Target>
                   <Button variant="subtle">
-                    <Flex gap={4} >
+                    <Flex gap={4} c="white">
                       <Avatar  radius="xl" size="sm"  className='text-blue-800'/>
                       <Text>{"Nolawi Mekuriaw"}</Text>
                     </Flex>
