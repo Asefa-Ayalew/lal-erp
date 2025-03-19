@@ -20,7 +20,7 @@ const Example: React.FC = () => {
 
   return (
     <div>
-      <ReusableCard title="User List" onAddClick={handleAddClick}>
+      <ReusableCard title="User List" newAllowed={true} onAddClick={handleAddClick}>
         <TableComponent data={data} onGoToDetail={handleGoToDetail} />
       </ReusableCard>
     </div>

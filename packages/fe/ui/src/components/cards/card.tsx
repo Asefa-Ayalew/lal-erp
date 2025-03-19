@@ -6,16 +6,17 @@ import classes from "./Card.module.css";
 
 interface ReusableCardProps {
   title: string;
+  newAllowed: boolean;
   onAddClick?: () => void;
   children?: React.ReactNode;
 }
 
-export const ReusableCard: React.FC<ReusableCardProps> = ({ title, onAddClick, children }) => {
+export const ReusableCard: React.FC<ReusableCardProps> = ({ title, newAllowed, onAddClick, children }) => {
   return (
     <Card withBorder radius="md" className={`${classes.card} ${classes.whiteBackground}`}>
       <Group justify="space-between">
         <Text className={classes.title}>{title}</Text>
-        {onAddClick && (
+        {newAllowed && (
           <Button size="xs" variant="filled" color="blue" onClick={onAddClick}>
             Add
           </Button>
