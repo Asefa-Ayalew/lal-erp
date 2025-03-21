@@ -2,26 +2,48 @@
   "name": "lal-erp",
   "private": true,
   "scripts": {
-    "dev:bo-registration": "turbo run dev --filter=registration",
-    "build:bo-registration": "turbo run build --filter=registration",
-    "lint:bo-registration": "turbo run lint --filter=registration",
     "dev:bo-bsc": "turbo run dev --filter=bsc",
     "build:bo-bsc": "turbo run build --filter=bsc",
     "lint:bo-bsc": "turbo run lint --filter=bsc",
+
+    "dev:bo-cs": "turbo run dev --filter=cs",
+    "build:bo-cs": "turbo run build --filter=cs",
+    "lint:bo-cs": "turbo run lint --filter=cs",
+
+    "dev:bo-pm": "turbo run dev --filter=pm",
+    "build:bo-pm": "turbo run build --filter=pm",
+    "lint:bo-pm": "turbo run lint --filter=pm",
+
+    "dev:bo-reg": "turbo run dev --filter=reg",
+    "build:bo-reg": "turbo run build --filter=reg",
+    "lint:bo-reg": "turbo run lint --filter=reg",
+
+    "dev:bo-rp": "turbo run dev --filter=rp",
+    "build:bo-rp": "turbo run build --filter=rp",
+    "lint:bo-rp": "turbo run lint --filter=rp",
+
+    "dev:bo-tt": "turbo run dev --filter=tt",
+    "build:bo-tt": "turbo run build --filter=tt",
+    "lint:bo-tt": "turbo run lint --filter=tt",
+
+    "dev:po": "turbo run dev --filter=po",
+    "build:po": "turbo run build --filter=po",
+    "lint:po": "turbo run lint --filter=po",
+
     "build:core": "turbo run build --filter=@lal-erp/core",
     "build:ui": "turbo run build --filter=@lal-erp/ui",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@lal-erp/eslint-config": "workspace:*",
-    "@lal-erp/tsconfig": "workspace:*",
-    "@tailwindcss/postcss": "4.0.12",
+    "@lal-erp/eslint-config": "workspace.*",
+    "@lal-erp/tsconfig": "workspace.*",
+    "@tailwindcss/postcss": "^4.0.12",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "prettier": "^3.5.3",
-    "tailwindcss": "4.0.12",
+    "tailwindcss": "^4.0.14",
     "turbo": "^2.4.4",
-    "typescript": "5.8.2"
+    "typescript": "^5.8.2"
   },
   "packageManager": "pnpm@10.6.1",
   "engines": {
@@ -31,7 +53,13 @@
     "@emotion/react": "^11.14.0",
     "@mantine/core": "^7.17.1",
     "@mantine/hooks": "^7.17.1",
-    "bsc": "^2.0.0",
-    "registration": "^2.0.0"
+    "bsc": "workspace.*",
+    "reg": "workspace.*",
+    "tt": "workspace.*",
+    "cs": "workspace.*",
+    "rp": "workspace.*",
+    "hr": "workspace.*",
+    "pm": "workspace.*",
+    "po": "workspace.*"
   }
 }

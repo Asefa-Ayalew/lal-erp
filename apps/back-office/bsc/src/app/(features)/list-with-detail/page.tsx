@@ -1,15 +1,19 @@
 "use client"; 
+
 import TableComponent from "@/app/components/ListWithDetail/Table";
 import { ReusableCard } from "@lal-erp/ui";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Example: React.FC = () => {
+  const router = useRouter();
+
   const handleAddClick = () => {
     alert("Add button clicked!");
   };
 
   const handleGoToDetail = (id: number) => {
-    alert(`Go to details for user ID: ${id}`);
+    router.push(`/list-with-detail/${id}`)
   };
 
   const data = [

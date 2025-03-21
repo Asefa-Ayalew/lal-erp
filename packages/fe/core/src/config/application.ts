@@ -20,15 +20,16 @@ interface ApplicationType {
 }
 
 export const Applications = [
-    { key: 'registration', name: 'Registration', icon: IconAdjustments },
-    { key: 'balancedScoreCard', name: 'Balanced Score Card', icon: IconBuildingBank },
-    { key: 'propertyManagement', name: 'Property Management', icon: IconUsers },
-    { key: 'researchPublication', name: 'Research Publication', icon: IconBook },
-    { key: 'communityService', name: 'Community Service', icon: IconCalendar },
-    { key: 'humanResource', name: 'Human Resource', icon: IconUsersGroup },
+    { key: 'reg', name: 'Registration', icon: IconAdjustments },
+    { key: 'bsc', name: 'Balanced Score Card', icon: IconBuildingBank },
+    { key: 'hr', name: 'Human Resource', icon: IconUsersGroup },
+    { key: 'pm', name: 'Property Management', icon: IconUsers },
+    { key: 'rp', name: 'Research Publication', icon: IconBook },
+    { key: 'cs', name: 'Community Service', icon: IconCalendar },
+    { key: 'tt', name: 'Technology Transfer', icon: IconUsersGroup }
 ];
 
-export const CurrentApplication = (key = 'balancedScoreCard'): ApplicationType => {
+export const CurrentApplication = (key = 'bsc'): ApplicationType => {
   const application =
     Applications.find((app) => app.key === key) ?? Applications[0];
   return application;
