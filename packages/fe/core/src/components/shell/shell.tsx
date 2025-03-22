@@ -34,9 +34,8 @@ import { useDisclosure, useNetwork } from "@mantine/hooks";
 import styles from "./shell.module.css";
 import { appConfig } from "src/config/menu";
 import { Applications } from "src/config/application";
-import { useLocale } from "../../../../../../apps/back-office/bsc/src/app/locale-provider";
+import { useLocale } from "../../../../../../apps/back-office/cs/src/app/locale-provider";
 import DarkModeToggle from "../dark-mode-toggle";
-import { UserInfo } from './user-info';
 
 interface ShellProps {
   children: React.ReactNode;
@@ -48,10 +47,9 @@ export function Shell({ children }: ShellProps): React.ReactNode {
   ));
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
-  const [currentApplication, setCurrentApplication] = useState("Balanced Score Card");
-  const applications = Applications.filter(
-    ({ name }) => name !== currentApplication
-  ).map((item) => (
+  const [currentApplication, setCurrentApplication] = useState("Community Service");
+
+  const applications = Applications.filter(({ name }) => name !== currentApplication).map((item) => (
     <Menu.Item
       component="a"
       href={`/${item.key}`}
@@ -226,7 +224,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                   >
                     {currentApplication }
                   </h2>
-                  <Divider c="blue" />
+                  {/* <Divider c="blue" /> */}
                 </Box>
                 <Burger
                   color="white"
@@ -237,8 +235,8 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 />
               </Box>
             </Box>
-            <UserInfo />
-            <Divider c="blue" />
+            {/* <UserInfo /> */}
+            {/* <Divider c="blue" /> */}
           </AppShell.Section>
           <AppShell.Section component={ScrollArea} grow>
             {links}

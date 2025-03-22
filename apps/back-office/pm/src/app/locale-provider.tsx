@@ -4,8 +4,8 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 import { NextIntlClientProvider } from "next-intl";
 
 // Import JSON translations
-import am from "../../../../../translations/apps/back-office/bsc/am.json";
-import en from "../../../../../translations/apps/back-office/bsc/en.json";
+import am from "../../../../../translations/apps/back-office/pm/am.json";
+import en from "../../../../../translations/apps/back-office/pm/en.json";
 
 type Locale = "en" | "am"; // Define supported languages
 

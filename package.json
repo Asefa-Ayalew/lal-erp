@@ -35,8 +35,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@lal-erp/eslint-config": "workspace.*",
-    "@lal-erp/tsconfig": "workspace.*",
+    "@lal-erp/eslint-config": "workspace:*",
+    "@lal-erp/tsconfig": "workspace:*",
     "@tailwindcss/postcss": "^4.0.12",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
@@ -53,13 +53,13 @@
     "@emotion/react": "^11.14.0",
     "@mantine/core": "^7.17.1",
     "@mantine/hooks": "^7.17.1",
-    "bsc": "workspace.*",
-    "reg": "workspace.*",
-    "tt": "workspace.*",
-    "cs": "workspace.*",
-    "rp": "workspace.*",
-    "hr": "workspace.*",
-    "pm": "workspace.*",
-    "po": "workspace.*"
+    "bsc": "workspace:*",
+    "reg": "workspace:*",
+    "tt": "workspace:*",
+    "cs": "workspace:*",
+    "rp": "workspace:*",
+    "hr": "workspace:*",
+    "pm": "workspace:*",
+    "po": "workspace:*"
   }
 }

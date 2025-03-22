@@ -29,8 +29,7 @@ export const Applications = [
     { key: 'tt', name: 'Technology Transfer', icon: IconUsersGroup }
 ];
 
-export const CurrentApplication = (key = 'bsc'): ApplicationType => {
-  const application =
-    Applications.find((app) => app.key === key) ?? Applications[0];
+export const CurrentApplication = (key = 'cs'): ApplicationType => {
+  const application = Applications.find((app) => app.key === key) ?? Applications[0];
   return application;
 };

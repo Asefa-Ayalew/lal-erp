@@ -46,7 +46,7 @@ export const TableWithDetailView = <T extends object>({
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-semibold">{title}</h2>
             <Button variant="filled" color="blue" leftIcon={<PlusIcon />} onClick={onNew}>
-              New
+            <PlusIcon />New
             </Button>
           </div>
           <Input
