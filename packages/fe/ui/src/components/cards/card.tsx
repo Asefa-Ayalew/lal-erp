@@ -23,7 +23,10 @@ export const ReusableCard: React.FC<ReusableCardProps> = ({ title, newAllowed, o
         )}
       </Group>
       <Divider my="sm" />
-      {children} {/* Table or any other child component */}
+      
+      {/* Table or any other child component */}
+      {children} 
+      
     </Card>
   );
 };
