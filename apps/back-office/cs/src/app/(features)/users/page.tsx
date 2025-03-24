@@ -140,6 +140,7 @@ const UsersPage: React.FC = () =>  {
               onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
             />
         </TableHeader>
+        
         <div className="pt-4">
           <ReusableCard
             title="Users"
