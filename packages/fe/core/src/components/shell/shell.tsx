@@ -36,6 +36,7 @@ import { appConfig } from "src/config/menu";
 import { Applications } from "src/config/application";
 import { useLocale } from "../../../../../../apps/back-office/cs/src/app/locale-provider";
 import DarkModeToggle from "../dark-mode-toggle";
+import { UserInfo} from './user-info';
 
 interface ShellProps {
   children: React.ReactNode;
@@ -86,8 +87,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
             alignItems: "center",
             color: "white"
           }}>
-          <Group align="center" h="100%" justify="space-between" px="sm"
-         >
+          <Group align="center" h="100%" justify="space-between" px="sm">
             <Group align="center" gap={12} h="100%">
               <Burger
                 hiddenFrom="sm"
@@ -207,7 +207,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
               <Box className="flex-grow">
                 <Box
                   style={{
-                    height: "42px",
+                    height: "64px",
                     backgroundColor: "#1A2940",
                     alignItems: "center",
                     color: "white"
@@ -222,7 +222,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                       fontWeight: "bold",
                     }}
                   >
-                    {currentApplication }
+                      {currentApplication }
                   </h2>
                   {/* <Divider c="blue" /> */}
                 </Box>
@@ -235,7 +235,7 @@ export function Shell({ children }: ShellProps): React.ReactNode {
                 />
               </Box>
             </Box>
-            {/* <UserInfo /> */}
+            {/* <UserInfo/> */}
             {/* <Divider c="blue" /> */}
           </AppShell.Section>
           <AppShell.Section component={ScrollArea} grow>

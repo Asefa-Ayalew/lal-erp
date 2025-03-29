@@ -23,7 +23,7 @@ export function ReusableCard({
   subTitle = "sub title",
   action,
   collapsible = true,
-  defaultCollapsed = false,
+  defaultCollapsed = true,
   className = "",
   width = "100%",
   onCollapseToggle,

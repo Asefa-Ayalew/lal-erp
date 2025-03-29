@@ -1,4 +1,5 @@
 import { TextInput } from '@mantine/core';
+import { IconSearch } from '@tabler/icons-react';
 
 interface SearchProps {
   query: string;
@@ -12,6 +13,7 @@ export function Search({ query, setQuery }: SearchProps) {
       onChange={(e) => setQuery(e.target.value)}
       placeholder="Search..."
       className="mb-4"
+      rightSection={<IconSearch size={18} />}
     />
   );
 }

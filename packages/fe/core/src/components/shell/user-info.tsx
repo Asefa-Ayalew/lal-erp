@@ -14,13 +14,13 @@ export function UserInfo() {
         <div>
 
           <Text fz="lg" fw={500} className='text-blue-950'>
-            Nolawi Mekuriaw
+            Nolawi M
           </Text>
           <Text  fw={300}>
             Software engineer
           </Text>
-
-          {/* <Group wrap="nowrap" gap={10} mt={3}>
+{/* 
+          <Group wrap="nowrap" gap={10} mt={3}>
             <IconAt stroke={1.5} size={16} />
             <Text fz="xs" c="dimmed">
               robert@glassbreaker.io

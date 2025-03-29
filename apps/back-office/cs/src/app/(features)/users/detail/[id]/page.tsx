@@ -1,7 +1,8 @@
+"use client"
 import { useParams } from "next/navigation";
-import React from "react";
+import React from 'react'
 
-const DetailPage: React.FC = () =>   {
+const DetailPage = () => {
   const params = useParams();
   const { id } = params;
 
@@ -12,3 +13,5 @@ const DetailPage: React.FC = () =>   {
     </div>
   );
 }
+
+export default DetailPage

@@ -7,8 +7,8 @@ import { debounce } from 'lodash';
 import axios from 'axios';
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Button } from "@mantine/core";
-// import { IconPlus } from "@tabler/icons-react";
+import { Button, Select } from "@mantine/core";
+import { IconPlus } from "@tabler/icons-react";
 
 const UsersPage: React.FC = () =>  {
   const router = useRouter();
@@ -99,14 +99,14 @@ const UsersPage: React.FC = () =>  {
   }, [query]);
 
   const handleNew = () => {
-    alert("New")
-    router.push('/new');
+    alert("New");
+    router.push('/users/new');
   };
 
   const handleDetail = (selectedRow: any) => {
     alert("Selected Row: "+ selectedRow);
     setSelectedUser(selectedRow);
-    router.push(`/detail/${selectedRow?.id}`)
+    router.push(`/users/detail/${selectedRow?.id}`)
   };
 
   // Slice the data based on the current page and page size
@@ -116,19 +116,20 @@ const UsersPage: React.FC = () =>  {
   );
   
   // Determine if the table should display only the primary column
-  const isPrimaryColumnView = pathname === "/new" || pathname.startsWith("/detail/");
+  const isPrimaryColumnView = pathname === "/users/new" || pathname.startsWith("/users/detail/");
 
   return (
     <div>
       <div className="">
         <TableHeader title="Users" newAllowed={true} onAddClick={handleNew}>
-          <Search query= {query} setQuery={(inputValue: any)=>setQuery(inputValue)} />
+            <Search query={query} setQuery={(inputValue: any) => setQuery(inputValue)} />
+          
             <Table 
               columns={columns} 
               primaryColumn={isPrimaryColumnView ? "name" : undefined}
               data={users || []} 
               onRowClick={(row: any) => handleDetail(row)} 
-              editMode={pathname === "/new" ? "new": pathname.startsWith("/detail/") ? "detail" : "list"}
+              editMode={pathname == "new" ? "new": pathname.startsWith("detail/") ? "detail" : "list"}
             />
 
             {/* Pagination */}
@@ -140,14 +141,13 @@ const UsersPage: React.FC = () =>  {
               onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
             />
         </TableHeader>
-        
         <div className="pt-4">
           <ReusableCard
             title="Users"
             subTitle="Manage your users"
             action={
               <Button size="xs" variant="filled" color="blue">
-                Add
+                <IconPlus size={16} />Add
               </Button>
             }
             collapsible
@@ -187,7 +187,7 @@ const UsersPage: React.FC = () =>  {
               </button>
             </>
           )} */}
-          <h1>Form Here</h1>
+          <h1>Detail or New Form here</h1>
         </div>
       )}
 
